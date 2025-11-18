@@ -1,0 +1,29 @@
+---
+import Title from './Title.astro';
+interface Props {
+    name: string;
+}
+
+const {name} = Astro.props;
+---
+
+	<h2 class:list={["font-" + name, "m-0 mt-1 col-span-2 text-lg font-semibold capitalize"]}>{name}</h2>
+	<div class:list={["font-" + name, "pb-2 mb-1 mt-2 ml-1 mr-1"]}>
+		History
+		Did aliens build the pyramids?
+		<div>
+			20k interactions, 371 arguments
+		</div>
+	</div>
+	<div class:list={["font-" + name, "pb-2 mb-1 mt-2 ml-1 mr-1"]}>
+		Donald Trump
+		Time to build that wall!
+	</div>
+	<div class:list={["font-" + name, "pb-2 mb-1 mt-2 ml-1 mr-1"]}>
+		Mum
+		Guess who won the Saturday afternoon pottery class competition!
+	</div>
+	<div class:list={["font-" + name, "pb-2 mb-1 mt-2 ml-1 mr-1"]}>
+		Dean Halberd
+		Welcoming my little boy to the world!
+	</div>

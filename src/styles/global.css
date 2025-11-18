@@ -1,0 +1,217 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+
+    --shadow-boxShadow-1md: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-boxShadow-2md: 0 3px 6px rgba(0, 0, 0, .15), 0 2px 4px rgba(0, 0, 0, 0.12);
+    --shadow-boxShadow-solid: 0 3px 0 hsl(220, 7%, 83%);
+
+    --color-normal: #232e53;
+    --color-bg: #f0f3f5;
+    --color-highlight: #b8adfb;
+    --color-second: #757d94;
+
+
+
+
+    --color-border: #e5e7eb;
+    --color-rosewater: #f5e0dc;
+    --color-flamingo: #f2cdcd;
+    --color-pink: #f5c2e7;
+    --color-mauve: #cba6f7;
+    --color-red-hover: #e87698;
+    --color-maroon: #eba0ac;
+    --color-peach: #fab387;
+    --color-yellow: #f9e2af;
+    --color-green: #a6e3a1;
+    --color-teal: #94e2d5;
+    --color-sky: #89dceb;
+    --color-sky-dark: #67A6B1;
+    --color-sapphire: #74c7ec;
+    --color-lavender: #b4befe;
+    --color-text: hsl(226.15, 63.93%, 88.04%);
+    /*--/ 'red': '#f38ba8',*/
+    /*--/ 'blue': '#89b4fa',*/
+    --color-new-text-400: hsl(226.15, 79.5%, 94.5%);
+    --color-new-text-450: hsl(226.15, 61.5%, 83.5%);
+    --color-new-text-500: hsl(226.15, 63.93%, 88.04%);
+    --color-new-text-501: hsl(222.5, 66.67%, 92.94%);
+    --color-new-text-550: hsl(226.15, 64.5%, 92%);
+    --color-subtext1: #bac2de;
+    --color-subtext0: #a6adc8;
+    --color-overlay2: #9399b2;
+    --color-overlay1: #7f849c;
+    --color-overlay0: #6c7086;
+    --color-surface2: #585b70;
+    --color-surface1: #45475a;
+    --color-surface0: #313244;
+    --color-darksurface: hsl(236.84, 18.24%, 20.94%);
+    --color-darksurface1: hsl(236.84, 19.24%, 17.94%);
+    --color-darksurface2: hsl(236.84, 20.24%, 16.94%);
+    --color-darksurface3: hsl(236.84, 20.24%, 15.94%);
+    --color-base: #1e1e2e;
+    --color-mantle: #181825;
+    --color-crust: #11111b;
+
+    --color-primary-500: hsl(227, 53%, 10%);
+    --color-primary-600: hsl(227, 55%, 31%);
+    --color-primary-700: hsl(227, 100%, 54%);
+
+    --color-light-text-200: hsl(0, 0%, 0%);
+    --color-light-text-300: hsl(227, 15%, 45%); /* keep */
+    --color-light-text-400: hsl(227, 5%, 10%);
+    --color-light-text-500: hsl(227, 9%, 20%); /* keep */
+    --color-light-text-600: hsl(227, 9%, 30%); /* keep */
+    --color-light-text-700: hsl(227, 25%, 30%); /* keep */
+    --color-light-text-750: hsl(227, 25%, 38%);
+    --color-light-text-800: hsl(227, 12%, 53%);
+    --color-light-text-900: hsl(227, 25%, 42%);
+    --color-light-text-1000: hsl(227, 25%, 45%);
+
+    --color-new-blue-400: hsl(227, 41%, 37.5%);
+    --color-new-blue-500: hsl(227, 43%, 41%);
+    --color-new-blue-501: hsl(227.41, 42.86%, 37.06%);
+    --color-new-blue-550: hsl(227, 43%, 48%);
+    --color-new-blue-560: hsl(227, 45%, 53%);
+    --color-new-blue-600: hsl(227, 43%, 43%);
+    --color-new-blue-700: hsl(227, 39%, 43%);
+    --color-new-blue-750: hsl(229.5, 53%, 58%);
+
+    --color-feint: hsl(0, 1.5%, 97.8%);
+    --color-feint-500: hsl(0, 1.9%, 95.6%);
+    --color-feint-550: hsl(0, 2.5%, 93%);
+    --color-feint-600: hsl(0, 4.5%, 90%);
+    --color-feint-650: hsl(0, 6.5%, 87%);
+
+    --color-inactive-100: hsl(0, 0%, 96%);
+    --color-inactive-200: hsl(0, 0%, 94%);
+    --color-inactive-300: hsl(0, 0%, 92%);
+    --color-inactive-350: hsl(0, 0%, 89%);
+    --color-inactive-400: hsl(0, 0%, 87%);
+    --color-inactive-450: hsl(0, 0%, 85%);
+    --color-inactive-460: hsl(0, 0%, 80%);
+    --color-inactive-500: hsl(0, 0%, 45%);
+
+    --color-danger-200: hsl(0, 46%, 57%);
+    --color-danger-300: hsl(0, 43%, 51%);
+    --color-danger-350: hsl(0, 41%, 48%);
+    --color-danger-400: hsl(0, 40%, 45%);
+    --color-danger-450: hsl(0, 40%, 41.5%);
+    --color-danger-500: hsl(0, 40%, 38%);
+    --color-danger-501: hsl(0, 40.67%, 40.98%);
+    /*TODO add something slightly darker than 501 here for active:*/
+    --color-danger-600: hsl(0, 25%, 30%);
+
+    --color-dollar-400: hsl(132, 34.5%, 39%);
+    --color-dollar-500: hsl(132, 37%, 42%);
+    --color-dollar-550: hsl(132, 37%, 43%);
+    --color-dollar-600: hsl(132, 39.5%, 45%);
+    --color-dollar-650: hsl(132, 39.5%, 45.5%);
+
+    --color-kiiro-400: hsl(50, 77%, 54%);
+    --color-kiiro-500: hsl(50, 82%, 60%);
+    --color-kiiro-550: hsl(50, 88%, 65%);
+    --color-kiiro-600: hsl(50, 94%, 67%);
+
+
+    --font-crimson: "Crimson Pro", serif;
+    --font-jakarta: "Plus Jakarta Sans", serif;
+    --font-inter: Inter, sans-serif;
+    --font-roboto: Roboto, serif;
+    --font-notoserif: "Noto Serif", serif;
+    --font-ibmplex: "IBM Plex Serif", sans-serif;
+    --font-poppins: Poppins, sans-serif;
+    --font-robotomono: "Roboto Mono", monospace;
+    --font-jbmono: "JetBrains Mono", monospace;
+    --font-courierprime: "Courier Prime", monospace;
+    --font-sourceserif: "Source Serif 4", serif;
+    --font-newsreader: Newsreader, serif;
+    --font-bahn: "Bahnschrift Condensed", "Roboto Condensed", sans-serif;
+    --font-robotocondensed: "Roboto Condensed", sans-serif;
+}
+
+.ibm-plex-serif-thin {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-serif-extralight {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-serif-light {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-serif-regular {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-serif-medium {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-serif-semibold {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-serif-bold {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-serif-thin-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-serif-extralight-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-serif-light-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-serif-regular-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-serif-medium-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-serif-semibold-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-serif-bold-italic {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 700;
+  font-style: italic;
+}

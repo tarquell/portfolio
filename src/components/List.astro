@@ -1,0 +1,24 @@
+---
+import Title from './Title.astro';
+
+interface Props {
+    title: string;
+    list: string;
+    isOdd?: boolean;
+}
+
+const { title, list, isOdd = true } = Astro.props;
+---
+
+<Title title={title}/>
+<ul class="min-w-0 flex flex-wrap gap-4 items-center">
+    {
+        list.split(", ").map
+        (item =>
+            <li class:list={[   "py-0.5",
+                                isOdd && "odd:border-b-2", !isOdd && "even:border-b-2",
+                                isOdd && "odd:border-new-text-450", !isOdd && "even:border-new-text-450"
+                            ]}>{item}</li>
+        )
+    }
+</ul>

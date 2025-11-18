@@ -1,0 +1,35 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+//import "../fonts-icons.css";
+//import "../fonts.css";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<!-- DEBUG: CV guides overlay – comment this out when not needed -->
+<div class="fixed inset-0 z-50 pointer-events-none flex items-center justify-center">
+  <div class="relative w-full h-full">
+    <!-- Black center crosshair -->
+    <div class="absolute top-1/2 left-0 right-0 h-px bg-black/60"></div>
+    <div class="absolute left-1/2 top-0 bottom-0 w-px bg-black/60"></div>
+
+    <!-- Red A4 page outline (centered) -->
+    <div
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+                 w-[210mm] h-[297mm] border border-red-500/80"
+    ></div>
+
+    <!-- Optional: inner “safe text” area with margins -->
+    <div
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+                 w-[180mm] h-[267mm] border border-red-400/70 border-dashed"
+    ></div>
+  </div>
+</div>
+
+<Layout>
+	<Welcome />
+</Layout>

@@ -1,0 +1,82 @@
+---
+import List from "./List.astro"
+import Role from "./Role.astro"
+import Title from "./Title.astro"
+import Fonts from "./Fonts.astro";
+
+const fonts = "crimson, jakarta, inter, roboto, notoserif, ibmplex, poppins, robotomono, jbmono, courierprime, sourceserif, newsreader, bahn, robotocondensed";
+---
+
+<div class="w-[210mm] bg-bg ring-1 ring-black/5 shadow-2xl rounded-xl p-8 ">
+	<main class="max-w-[180mm]">
+
+		<div class="flex items-center justify-between">
+			<h1 class="text-4xl font-bold ibm-plex-serif-bold">Tarquell</h1>
+			<ul class="flex gap-4">
+				<li><a href="mailto:tarquell@outlook.com">tarquell@outlook.com</a></li>
+				<li>+44 7710 975 666</li>
+				<li><a href="https://linkedin.com/in/bardwelltk">linkedin.com/in/bardwelltk</a></li>
+				<li><a href="https://github.com/tarquell">github.com/tarquell</a></li>
+
+			</ul>
+		</div>
+		<p class="mb-2">A Full-Stack Engineer with 6 years of experience, designing software, systems, and two years of leading teams. Deeply enthusiastic about building beautiful, functional, and performant tools.</p>
+
+		<div class="grid grid-cols-[max-content_minmax(0,1fr)] gap-x-4 gap-y-0">
+
+			<List title="Languages" list="Go, React, Python, C++, TypeScript/Node, Bash, SQL"/>
+
+			<!-- Projects (section header spans both cols, controlled spacing above) -->
+			<Title title="Projects" isRow={true}/>
+			<Role 
+			where="Project Tractatus" 
+			when="Nov 2024 - Present" 
+			title="Lead Software Engineer"
+			list=`	Built a prototype for a modern social platform focused on structured discourse.
+        			Core logic in Go, and performant modules in C++.
+        			Frontend developed with Svelte 5 and Tailwind.
+        			Planned cloud-native systems using Docker, CI/CD, and Cloud Storage.
+        			Investigated AV1 and VP9 video codecs, CUDA encoding, and ASICs.`
+			isEnd={true}/>
+
+			<List title="Technologies" list="Kafka, Elasticsearch, AWS, Docker, Git, OTEL, Kubernetes, APIs" isOdd={false}/>
+			<List title="Skills" list="Technical Leadership, Systems Design, Mentorship, Cloud"/>
+
+			<Title title="Work Experience" isRow={true}/>
+			<Role 
+			where="Oracle" 
+			when="Sep 2023 - Oct 2024" 
+			title="Senior Software Engineer"
+			list=`	Led the migration of 40+ legacy RESTful microservices from AWS to OCI.
+					Standardised CI/CD workflows across projects, reducing maintenance time.
+					Architected a polyglot persistence design in Java, reducing latency from 20s to 100ms.
+					Optimized core database schema, reducing CPU, memory, and disk I/O by 90%.
+					Designed a distributed event-driven data-sync system using Kafka.
+					Mentored engineers on distributed system architectures and design patterns.`/>
+			<Role 
+			where="Oracle" 
+			when="Aug 2021 - Sep 2023" 
+			title="Software Engineer"
+			list=`	Enabled cloud provider hot-swapping in Go with Strategy Pattern.
+					Solved high latency, remediating bottlenecks in 1 GB/s traffic with Worker pattern.
+					Used layered patterns to ensure simple and consistent design of React Components.
+					Led UI development across organisation using React, TypeScript and Webpack.
+					Mentored engineers on modern front-end development, guiding them through responsive design principles.`/>
+			<Role 
+			where="Amazon Prime Air" 
+			when="Jul 2019 - Apr 2020" 
+			title="SDE II"
+			list=`	Replaced 1hr video pipeline, with a Python script saving each person 3 hours per day.
+					Architected a distributed media cache eliminating 30Gbps bandwidth bottleneck.
+					Swapped video review tools saving 75,000 hours annually.
+					Contributed in technical discussions with Engineers and Management.`/>
+		</div>
+
+		<!-- {fonts.split(", ").map(font => <Fonts name={font}/>)} -->
+
+
+		</div>
+	</main>
+</div>
+
+

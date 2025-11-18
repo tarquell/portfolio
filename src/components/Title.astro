@@ -1,0 +1,10 @@
+---
+interface Props {
+    title: string;
+    isRow?: boolean;
+}
+
+const { title, isRow = false } = Astro.props;
+---
+
+<h2 class:list={[!isRow? "m-0 text-lg font-semibold" : "m-0 mt-1 col-span-2 text-lg font-semibold"]}>{title}</h2>
