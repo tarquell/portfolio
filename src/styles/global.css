@@ -9,9 +9,12 @@
     --shadow-boxShadow-solid: 0 3px 0 hsl(220, 7%, 83%);
 
     --color-normal: #232e53;
+    
     --color-bg: #f0f3f5;
     --color-highlight: #b8adfb;
     --color-second: #757d94;
+    /* --color-third: 	hsl(226, 23%, 68%); /*hsl(226, 41%, 23%)*/ 
+    --color-third: hsl(226.15, 17.5%, 68%);
 
 
 
@@ -214,4 +217,30 @@
   font-family: "IBM Plex Serif", serif;
   font-weight: 700;
   font-style: italic;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.newsreader {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+}
+
+.source-serif-4 {
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
 }

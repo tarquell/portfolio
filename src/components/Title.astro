@@ -7,4 +7,4 @@ interface Props {
 const { title, isRow = false } = Astro.props;
 ---
 
-<h2 class:list={[!isRow? "m-0 text-lg font-semibold" : "m-0 mt-1 col-span-2 text-lg font-semibold"]}>{title}</h2>
+<h2 class:list={["m-0 text-lg font-semibold inter", isRow && "mt-1 col-span-2"]}>{title}</h2>

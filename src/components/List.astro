@@ -11,13 +11,13 @@ const { title, list, isOdd = true } = Astro.props;
 ---
 
 <Title title={title}/>
-<ul class="min-w-0 flex flex-wrap gap-4 items-center">
+<ul class="min-w-0 flex flex-wrap gap-4 items-center text-sm">
     {
         list.split(", ").map
         (item =>
-            <li class:list={[   "py-0.5",
-                                isOdd && "odd:border-b-2", !isOdd && "even:border-b-2",
-                                isOdd && "odd:border-new-text-450", !isOdd && "even:border-new-text-450"
+            <li class:list={[   "py-0.5 border-b-2 border-transparent",
+                                isOdd && "odd:border-new-text-450", 
+                                !isOdd && "even:border-new-text-450"
                             ]}>{item}</li>
         )
     }

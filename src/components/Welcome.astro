@@ -2,74 +2,91 @@
 import List from "./List.astro"
 import Role from "./Role.astro"
 import Title from "./Title.astro"
-import Fonts from "./Fonts.astro";
+import Fonts from "./Fonts.astro"
+import GitHub from "../icons/GitHub.astro"
+import LinkedIn from "../icons/LinkedIn.astro"
+import Email from "../icons/Email.astro"
+import Phone from "../icons/Phone.astro"
 
 const fonts = "crimson, jakarta, inter, roboto, notoserif, ibmplex, poppins, robotomono, jbmono, courierprime, sourceserif, newsreader, bahn, robotocondensed";
 ---
 
-<div class="w-[210mm] bg-bg ring-1 ring-black/5 shadow-2xl rounded-xl p-8 ">
-	<main class="max-w-[180mm]">
+<div class="w-[216mm] bg-bg ring-1 ring-black/5 shadow-2xl rounded-xl p-6 print:ring-0 print:shadow-none print:rounded-none">
+	<main class="max-w-[209mm]">
 
-		<div class="flex items-center justify-between">
-			<h1 class="text-4xl font-bold ibm-plex-serif-bold">Tarquell</h1>
-			<ul class="flex gap-4">
-				<li><a href="mailto:tarquell@outlook.com">tarquell@outlook.com</a></li>
-				<li>+44 7710 975 666</li>
-				<li><a href="https://linkedin.com/in/bardwelltk">linkedin.com/in/bardwelltk</a></li>
-				<li><a href="https://github.com/tarquell">github.com/tarquell</a></li>
-
+		<div class="flex items-baseline justify-between mb-2">
+			<h1 class="text-4xl font-semibold source-serif-4">Kieran Bardwell</h1>
+			<ul class="flex gap-4 mr-4 px-2">
+				<li class="flex items-center text-sm text-third gap-1 inter">
+					<a href="https://linkedin.com/in/tarquell">
+						<LinkedIn/>
+					</a>
+					<a href="https://github.com/tarquell">
+						<GitHub/>
+					</a>
+					/tarquell
+				</li>
+				<li><a href="mailto:tarquell@outlook.com" class="flex items-center text-sm text-third gap-0.5 inter"><Email/>tarquell@outlook.com</a></li>
+				<li class="flex items-center text-sm text-third gap-0.5 roboto"><Phone/>+44 7710 975 666</li>
 			</ul>
 		</div>
-		<p class="mb-2">A Full-Stack Engineer with 6 years of experience, designing software, systems, and two years of leading teams. Deeply enthusiastic about building beautiful, functional, and performant tools.</p>
+		<p class="mb-2">A Full-Stack Engineer with 6 years of experience in web, backend, system architecture, and three years of leading teams. Delivered complex user tools requiring a balance of performance, maintainability and scalability, all tracked with telemetry. </p>
 
 		<div class="grid grid-cols-[max-content_minmax(0,1fr)] gap-x-4 gap-y-0">
+			
+			
+
 
 			<List title="Languages" list="Go, React, Python, C++, TypeScript/Node, Bash, SQL"/>
 
 			<!-- Projects (section header spans both cols, controlled spacing above) -->
-			<Title title="Projects" isRow={true}/>
+			<!-- <Title title="Projects" isRow={true}/>
 			<Role 
 			where="Project Tractatus" 
 			when="Nov 2024 - Present" 
-			title="Lead Software Engineer"
-			list=`	Built a prototype for a modern social platform focused on structured discourse.
-        			Core logic in Go, and performant modules in C++.
-        			Frontend developed with Svelte 5 and Tailwind.
-        			Planned cloud-native systems using Docker, CI/CD, and Cloud Storage.
+			title="Personal Project, acting as Lead"
+			list=`	Developed with Svelte, Go, and C++.
         			Investigated AV1 and VP9 video codecs, CUDA encoding, and ASICs.`
-			isEnd={true}/>
+			isEnd={true}/> -->
 
 			<List title="Technologies" list="Kafka, Elasticsearch, AWS, Docker, Git, OTEL, Kubernetes, APIs" isOdd={false}/>
 			<List title="Skills" list="Technical Leadership, Systems Design, Mentorship, Cloud"/>
 
-			<Title title="Work Experience" isRow={true}/>
+			<Title title="Work" isRow={true}/>
 			<Role 
 			where="Oracle" 
 			when="Sep 2023 - Oct 2024" 
 			title="Senior Software Engineer"
-			list=`	Led the migration of 40+ legacy RESTful microservices from AWS to OCI.
+			sublistTitle="Principal-Level Responsibilities"
+			sublist=`	Drove organisation technical leadership, coordinating with backend, data, and UI teams; defined architecture, resolved cross-service dependencies, and aligned multi-team delivery plans.
+						Acted as the primary escalation point for incident recovery, diagnosing systemic blockers, and establishing new workflows and operational strategies.
+						Raised engineering standards across teams, mentoring engineers (including senior-level) on distributed system design, frontend architecture, testing strategy, and maintainable workflows.
+						Influenced product and technical strategy, building strong relationships with stakeholders and shaping roadmap priorities based on user behaviour and system constraints.
+						Ensured long-term system health, promoting consistent architectural patterns, code quality, and documentation across services and shared components.
+					`
+			listTitle="Senior-Level Responsibilities"
+			list=`	Led the migration of 40+ legacy REST microservices from AWS to OCI.
 					Standardised CI/CD workflows across projects, reducing maintenance time.
-					Architected a polyglot persistence design in Java, reducing latency from 20s to 100ms.
+					Architected a polyglot persistence system, reducing endpoint latency from 20s to 100ms.
 					Optimized core database schema, reducing CPU, memory, and disk I/O by 90%.
-					Designed a distributed event-driven data-sync system using Kafka.
-					Mentored engineers on distributed system architectures and design patterns.`/>
+					Designed a distributed event-driven data-sync system using Kafka and Go.`/>
 			<Role 
 			where="Oracle" 
 			when="Aug 2021 - Sep 2023" 
 			title="Software Engineer"
-			list=`	Enabled cloud provider hot-swapping in Go with Strategy Pattern.
+			list=`	Led UI development across organisation using React, TypeScript and Webpack.
+					Enabled cloud provider hot-swapping in Go with Strategy Pattern.
 					Solved high latency, remediating bottlenecks in 1 GB/s traffic with Worker pattern.
 					Used layered patterns to ensure simple and consistent design of React Components.
-					Led UI development across organisation using React, TypeScript and Webpack.
 					Mentored engineers on modern front-end development, guiding them through responsive design principles.`/>
 			<Role 
 			where="Amazon Prime Air" 
 			when="Jul 2019 - Apr 2020" 
-			title="SDE II"
-			list=`	Replaced 1hr video pipeline, with a Python script saving each person 3 hours per day.
+			title="Data Analyst (Performed Software Engineering Responsibilities)"
+			list=`	Rebuilt 1-hour video pipeline, using Python locally, saving 3 hours per person per day.
 					Architected a distributed media cache eliminating 30Gbps bandwidth bottleneck.
-					Swapped video review tools saving 75,000 hours annually.
-					Contributed in technical discussions with Engineers and Management.`/>
+					Worked directly with Software Team, earning endorsement from Principal Engineers.
+					Delivered solutions adopted across multiple divisions, resulting in tens of thousands of hours saved annually, significantly reducing costs.`/>
 		</div>
 
 		<!-- {fonts.split(", ").map(font => <Fonts name={font}/>)} -->
@@ -80,3 +97,8 @@ const fonts = "crimson, jakarta, inter, roboto, notoserif, ibmplex, poppins, rob
 </div>
 
 
+<!-- sublist=`	Provided technical leadership, coordinating with 3 other teams, driving architecture decisions, resolving cross-service dependencies, and coordinating multi-team delivery plans.
+						Led incident recovery, rapidly diagnosing blockers, organising task forces, and defining new strategies and workflows to stabilise delivery.
+						Mentored engineers at all levels, improving their grasp of complex distributed systems, frontend architecture, and workflow discipline; raised overall engineering quality across teams.
+						Built strong relationships with stakeholders, observing real-world usage, gathering insights, and shaping product priorities based on direct feedback.
+					` -->
